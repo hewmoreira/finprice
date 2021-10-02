@@ -1,9 +1,7 @@
 <template>
-  <div>
+  <div class="app">
     <Sidebar/>
-    <div class="text-center">
-      <h1> FinCalc</h1>
-    </div>
+    <div class="main"></div>
   </div>
 </template>
 
@@ -22,5 +20,13 @@ export default {
 </script>
 
 <style>
+  .app{
+    display: flex;
+  }
+  .main{
+    width: 100%;
+    height: 100vh;
 
+    background-color: #f7f7f7;
+  }
 </style>
