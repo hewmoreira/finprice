@@ -1,5 +1,3 @@
-# fincalc
-
 ## Project setup
 ```
 npm install
