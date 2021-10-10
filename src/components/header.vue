@@ -13,7 +13,7 @@
         <a href="/" id="menu-logo">FinCa1c</a>
         <ul>
           <li><a href="/">Home</a></li>
-          <li><a href="/precomedio">Preço Médio</a></li>
+          <li><a href="/about">About</a></li>
         </ul>
       </div>
 
