@@ -1,23 +1,31 @@
 <template>
   <header>
     <nav class="container">
-      <a id="link-menu"><img src="../assets/menu.svg" alt="menu" id="menu-button" @click="menuActive = !menuActive"/></a>
-      
-      <div id="menu-items" :class="{active:menuActive}">
-      <a href="/" id="menu-logo">FinCa1c</a>
+      <a id="link-menu"
+        ><img
+          src="../assets/menu.svg"
+          alt="menu"
+          id="menu-button"
+          @click="menuActive = !menuActive"
+      /></a>
+
+      <div id="menu-items" :class="{ active: menuActive }">
+        <a href="/" id="menu-logo">FinCa1c</a>
         <ul>
           <li><a href="/">Home</a></li>
           <li><a href="/precomedio">Preço Médio</a></li>
         </ul>
       </div>
-      
+
       <a href="/" id="logo">FinCa1c</a>
 
       <span id="blank"></span>
 
-      <div id="menu-overlay" v-if="menuActive" @click="menuActive = !menuActive"></div>
-
-
+      <div
+        id="menu-overlay"
+        v-if="menuActive"
+        @click="menuActive = !menuActive"
+      ></div>
     </nav>
   </header>
 </template>
@@ -25,11 +33,11 @@
 <script>
 export default {
   name: "Header",
-  data(){
+  data() {
     return {
-      menuActive: false
-    }
-  }
+      menuActive: false,
+    };
+  },
 };
 </script>
 
@@ -61,7 +69,7 @@ nav {
   margin-top: 7px;
 }
 
-#menu-overlay{
+#menu-overlay {
   position: fixed;
   top: 0;
   right: 0;
@@ -71,7 +79,7 @@ nav {
   opacity: 0.8;
 }
 
-#menu-logo{
+#menu-logo {
   width: 110px;
   margin-top: 30px;
   margin-bottom: 10px;
@@ -80,7 +88,7 @@ nav {
   font-size: 28px;
 }
 
-#menu-items{
+#menu-items {
   position: fixed;
   top: 0;
   left: 0;
@@ -93,56 +101,53 @@ nav {
   align-items: center;
 }
 
-#menu-items.active{
+#menu-items.active {
   display: flex;
 }
 
-ul{
+ul {
   list-style: none;
   text-align: center;
 }
 
-ul li{
+ul li {
   margin: 20px 0px;
 }
 
-ul li a{
+ul li a {
   color: var(--color-text-light);
 }
 
-@media screen and (min-width:700px){
+@media screen and (min-width: 700px) {
   #menu-button,
   #menu-logo,
   #blank,
   #link-menu,
-  #menu-overlay{
+  #menu-overlay {
     display: none;
   }
 
-  #logo{
-  position: static;
-  margin-right: 50%;
+  #logo {
+    position: static;
+    margin-right: 50%;
   }
 
-  #menu-items{
+  #menu-items {
     display: flex;
     position: static;
     height: 60px;
     width: auto;
   }
 
-  ul{
+  ul {
     display: flex;
     height: 60px;
     align-items: center;
   }
 
-  ul li{
+  ul li {
     margin: 0;
     margin-left: 20px;
   }
-
 }
-
-
 </style>
