@@ -44,6 +44,7 @@ export default {
 
     .quantField{
         font-size: 20px;
+        width: 170px;
         padding: 15px;
         color: #909090;
         background: #fff;
@@ -51,10 +52,17 @@ export default {
         border: none;
         border-radius: 5px;
         box-shadow: 3px 3px 6px rgb(0 0 0 / 5%);
+        transition: 0.5s;
+    }
+
+    .quantField:hover{
+        width: 250px;
+        transition: 0.5s;
     }
 
     .priceField{
         font-size: 20px;
+        width: 170px;
         padding: 15px;
         color: #909090;
         background: #fff;
@@ -62,6 +70,11 @@ export default {
         border: none;
         border-radius: 5px;
         box-shadow: 3px 3px 6px rgb(0 0 0 / 5%);
+        transition: 0.5s;
+    }
+
+    .priceField:hover{
+        width: 250px;
     }
 
     .btnCalc{
@@ -75,13 +88,14 @@ export default {
         justify-content: center;
         color: var(--color-text-light);
         background: var(--color-background-footer);
+        transition: 0.35s;
         
     }
 
     .btnCalc:hover{
         background: var(--color-text-yellow);
         color: var(--color-text-dark);
-        transition: 0.3s;
+        transition: 0.35s;
     }
 
 
