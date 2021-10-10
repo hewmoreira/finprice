@@ -56,8 +56,12 @@ export default {
     }
 
     .quantField:hover{
-        width: 250px;
+        width: 230px;
         transition: 0.5s;
+    }
+
+    .quantField:focus{
+        width: 230px;
     }
 
     .priceField{
@@ -74,7 +78,11 @@ export default {
     }
 
     .priceField:hover{
-        width: 250px;
+        width: 230px;
+    }
+
+    .priceField:focus{
+        width: 230px;
     }
 
     .btnCalc{
@@ -100,7 +108,9 @@ export default {
 
 
     #publish{
-
+        width: 600px;
+        height: 100px;
+        background: #fff;
     }
 
 </style>
