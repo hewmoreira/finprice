@@ -4,24 +4,28 @@
         Calculadora de Preço Médio
     </div>
     <div id="calculadoraPrecoMedio">
-        <input type="number" class="quantField" placeholder="Quantidade">
-        <input type="number" class="priceField" placeholder="R$ 0,00">
+        <input type="number" class="quantField" placeholder="Quantidade" v-model="quantidade">
+        <input type="number" class="priceField" placeholder="R$ 0,00" v-model="preco">
         <button type="submit" class="btnCalc" :click="calcPM">
             <font-awesome-icon class="iconBtnCalc" icon="plus"/>
         </button>
     </div>
     <div id="result">
-        <span class="qtdTotal">
-            <font-awesome-icon icon="coins"/>
-            Quantidade Total: 
-            <b>30</b>
-            
-        </span>
-        <span class="pmAtual">
-            <font-awesome-icon icon="dollar-sign"/>
-            Preço Médio: 
-            <b>25</b>
-        </span>
+        <div id="divQtdTotal">
+            <span class="qtdTotal">
+                <font-awesome-icon icon="coins"/>
+                Quantidade Total: 
+                <b>{{ quantidade }}</b>
+                
+            </span>
+        </div>
+        <div id="divPMTotal">
+            <span class="pmAtual">
+                <font-awesome-icon icon="dollar-sign"/>
+                Preço Médio: 
+                <b>R$ {{ formatPrice(preco) }}</b>
+            </span>
+        </div>
     </div>
     <div id="publish"></div>
   </main>
@@ -29,7 +33,19 @@
 
 <script>
 export default {
-    name: "PrecoMedio"
+    name: "PrecoMedio",
+    data(){
+        return{
+            quantidade: '',
+            preco: ''
+        }
+    },
+    methods: {
+    formatPrice(value) {
+        let val = (value/1).toFixed(2).replace('.', ',')
+        return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
+    }
+}
 }
 </script>
 
@@ -127,15 +143,23 @@ export default {
 
 
     #result{
-        width: 450px;
+        width: 625px;
         height: 100px;
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
 
+    #divQtdTotal{
+        width: 350px;
+    }
+        
     .qtdTotal{
         font-size: 20px;
+    }
+
+    #divPMTotal{
+        width: 300px;
     }
 
     .pmAtual{
