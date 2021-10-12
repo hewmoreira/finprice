@@ -1,7 +1,7 @@
-import { faUser } from '@fortawesome/free-solid-svg-icons'
+import { faCoins, faDollarSign, faPlus } from '@fortawesome/free-solid-svg-icons'
 
 const icons = {
-    faUser
+    faCoins, faDollarSign, faPlus
 }
 
 export default icons;

@@ -6,11 +6,22 @@
     <div id="calculadoraPrecoMedio">
         <input type="number" class="quantField" placeholder="Quantidade">
         <input type="number" class="priceField" placeholder="R$ 0,00">
-        <button type="submit" class="btnCalc" :click="calcPM">+</button>
+        <button type="submit" class="btnCalc" :click="calcPM">
+            <font-awesome-icon class="iconBtnCalc" icon="plus"/>
+        </button>
     </div>
     <div id="result">
-        <span class="qtdTotal">Quantidade Total: <b>30</b></span>
-        <font-awesome-icon icon="user" /><span class="pmAtual">Preço Médio: <b>25</b></span>
+        <span class="qtdTotal">
+            <font-awesome-icon icon="coins"/>
+            Quantidade Total: 
+            <b>30</b>
+            
+        </span>
+        <span class="pmAtual">
+            <font-awesome-icon icon="dollar-sign"/>
+            Preço Médio: 
+            <b>25</b>
+        </span>
     </div>
     <div id="publish"></div>
   </main>
@@ -30,14 +41,13 @@ export default {
     }
     
     #title{
-        color: var(--color-text-dark);
+        color: var(--color-black2);
         font-size: 30px;
         text-align: center;
         margin-top: 100px;
     }
 
     #calculadoraPrecoMedio {
-        /* background-color: var(--color-background); */
         margin-top: 30px;
         width: 700px;
         height: 150px;
@@ -98,16 +108,21 @@ export default {
         border-radius: 5px;
         display: flex;
         justify-content: center;
-        color: var(--color-text-light);
+        color: var(--color-white1);
         background: var(--color-background-footer);
         transition: 0.35s;
         
     }
 
     .btnCalc:hover{
-        background: var(--color-text-yellow);
-        color: var(--color-text-dark);
+        background: var(--color-yellow1);
+        color: var(--color-black2);
         transition: 0.35s;
+    }
+
+    .iconBtnCalc{
+        margin-top: 4px;
+        width: 22px;
     }
 
 

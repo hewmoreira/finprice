@@ -43,7 +43,7 @@ export default {
 
 <style scoped>
 header {
-  background-color: var(--color-background-nav);
+  background-color: var(--color-black1);
   height: 60px;
   width: 100%;
   display: flex;
@@ -92,7 +92,7 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: var(--color-background-nav);
+  background-color: var(--color-black1);
   width: 60%;
   height: 100vh;
   display: none;
@@ -115,7 +115,7 @@ ul li {
 }
 
 ul li a {
-  color: var(--color-text-light);
+  color: var(--color-white1);
 }
 
 @media screen and (min-width: 700px) {
