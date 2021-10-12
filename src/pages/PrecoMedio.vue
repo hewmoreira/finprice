@@ -12,18 +12,18 @@
     </div>
     <div id="result">
         <div id="divQtdTotal">
-            <div class="qtdTotal">
                 Quantidade Total: &nbsp;
                 <font-awesome-icon icon="coins"/>&nbsp;
-                <b>{{ quantidade }}</b>
-            </div>
+                <b>{{ formatNumber(quantidade) }}</b>
+            <!-- <div class="qtdTotal">
+            </div> -->
         </div>
         <div id="divPMTotal">
-            <div class="pmAtual">
                 Preço Médio: &nbsp;
                 <font-awesome-icon icon="dollar-sign"/>&nbsp;
                 <b>{{ formatPrice(preco) }}</b>
-            </div>
+            <!-- <div class="pmAtual">
+            </div> -->
         </div>
     </div>
     <div id="listaCalcPM">
@@ -40,12 +40,16 @@ export default {
         return{
             quantidade: '',
             preco: '',
-            // listaCalc: ['Oi']
+            listaPMs: []
         }
     },
     methods: {
     formatPrice(value) {
         let val = (value/1).toFixed(2).replace('.', ',')
+        return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
+    },
+    formatNumber(value) {
+        let val = (value/1).toFixed(0).replace('.', ',')
         return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
     }
 }
@@ -155,17 +159,17 @@ export default {
         border: 2px dashed var(--color-white1);
     }
 
-    #divQtdTotal{
+    /* #divQtdTotal{
         width: auto;
-    }
+    } */
         
     .qtdTotal{
         font-size: 20px;
     }
 
-    #divPMTotal{
+    /* #divPMTotal{
         width: auto;
-    }
+    } */
 
     .pmAtual{
         font-size: 20px;
