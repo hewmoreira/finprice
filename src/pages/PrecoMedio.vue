@@ -10,7 +10,7 @@
     </div>
     <div id="result">
         <span class="qtdTotal">Quantidade Total: <b>30</b></span>
-        <span class="pmAtual"><font-awesome-icon icon="fa-solid fa-coins" />Preço Médio: <b>25</b></span>
+        <font-awesome-icon icon="user" /><span class="pmAtual">Preço Médio: <b>25</b></span>
     </div>
     <div id="publish"></div>
   </main>
