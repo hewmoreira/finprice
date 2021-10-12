@@ -39,7 +39,8 @@ export default {
     data(){
         return{
             quantidade: '',
-            preco: ''
+            preco: '',
+            // listaCalc: ['Oi']
         }
     },
     methods: {
