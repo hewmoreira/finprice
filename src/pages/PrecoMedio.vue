@@ -13,17 +13,17 @@
     <div id="result">
         <div id="divQtdTotal">
             <span class="qtdTotal">
-                <font-awesome-icon icon="coins"/>
-                Quantidade Total: 
+                Quantidade Total: &nbsp;
+                <font-awesome-icon icon="coins"/>&nbsp;
                 <b>{{ quantidade }}</b>
                 
             </span>
         </div>
         <div id="divPMTotal">
             <span class="pmAtual">
-                <font-awesome-icon icon="dollar-sign"/>
-                Preço Médio: 
-                <b>R$ {{ formatPrice(preco) }}</b>
+                Preço Médio: &nbsp;
+                <font-awesome-icon icon="dollar-sign"/>&nbsp;
+                <b>{{ formatPrice(preco) }}</b>
             </span>
         </div>
     </div>
