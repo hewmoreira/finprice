@@ -12,19 +12,18 @@
     </div>
     <div id="result">
         <div id="divQtdTotal">
-            <span class="qtdTotal">
+            <div class="qtdTotal">
                 Quantidade Total: &nbsp;
                 <font-awesome-icon icon="coins"/>&nbsp;
                 <b>{{ quantidade }}</b>
-                
-            </span>
+            </div>
         </div>
         <div id="divPMTotal">
-            <span class="pmAtual">
+            <div class="pmAtual">
                 Preço Médio: &nbsp;
                 <font-awesome-icon icon="dollar-sign"/>&nbsp;
                 <b>{{ formatPrice(preco) }}</b>
-            </span>
+            </div>
         </div>
     </div>
     <div id="publish"></div>
@@ -143,15 +142,17 @@ export default {
 
 
     #result{
-        width: 625px;
+        min-width: 300px;
         height: 100px;
         display: flex;
-        align-items: center;
-        justify-content: space-between;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 10px;
+        border: 2px dashed var(--color-white1);
     }
 
     #divQtdTotal{
-        width: 350px;
+        width: auto;
     }
         
     .qtdTotal{
@@ -159,7 +160,7 @@ export default {
     }
 
     #divPMTotal{
-        width: 300px;
+        width: auto;
     }
 
     .pmAtual{
