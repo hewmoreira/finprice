@@ -26,6 +26,9 @@
             </div>
         </div>
     </div>
+    <div id="listaCalcPM">
+
+    </div>
     <div id="publish"></div>
   </main>
 </template>
@@ -165,6 +168,13 @@ export default {
 
     .pmAtual{
         font-size: 20px;
+    }
+
+    #listaCalcPM{
+        margin-top: 30px;
+        width: 600px;
+        height: 100px;
+        background: #fff;
     }
 
     #publish{
