@@ -1,10 +1,13 @@
 :root {
     --color-background: #f3f3f3;
-    --color-background-nav: #2b3d50;
-    --color-backgruond-home: #344960;
-    --color-text-light: #ededed;
-    --color-text-title: #ff5555;
-    --color-text-dark: #3d3d3d;
+    --color-background-home: #f7f7f7;
+    --color-background-footer: #333533;
+    --color-black1: #242423;
+    --color-black2: #3d3d3d;
+    --color-white1: #ededed;
+    --color-orange1: #ff5555;
+    --color-yellow1: #F5CB5C;
+    --color-prata: #CFDBD5;
 }
 
 *{
@@ -30,4 +33,11 @@ a:hover{
 
 .container{
     width: 90%;
+}
+
+main{
+    width: 100%;
+    height: calc(100vh - 120px);
+    display: flex;
+    flex-direction: column;
 }
