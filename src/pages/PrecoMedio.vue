@@ -6,7 +6,11 @@
     <div id="calculadoraPrecoMedio">
         <input type="number" class="quantField" placeholder="Quantidade">
         <input type="number" class="priceField" placeholder="R$ 0,00">
-        <button type="submit" class="btnCalc">+</button>
+        <button type="submit" class="btnCalc" :click="calcPM">+</button>
+    </div>
+    <div id="result">
+        <span class="qtdTotal">Quantidade Total: <b>30</b></span>
+        <span class="pmAtual"><font-awesome-icon icon="fa-solid fa-coins" />Preço Médio: <b>25</b></span>
     </div>
     <div id="publish"></div>
   </main>
@@ -14,7 +18,7 @@
 
 <script>
 export default {
-    name: "Home"
+    name: "PrecoMedio"
 }
 </script>
 
@@ -107,7 +111,24 @@ export default {
     }
 
 
+    #result{
+        width: 450px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .qtdTotal{
+        font-size: 20px;
+    }
+
+    .pmAtual{
+        font-size: 20px;
+    }
+
     #publish{
+        margin-top: 30px;
         width: 600px;
         height: 100px;
         background: #fff;
