@@ -22,15 +22,15 @@
                 <b>{{ formatPrice(preco) }}</b>
         </div>
     </div>
-    <div id="listaPMs">
+    <div id="listaPMs" v-if="listaQuantidade[0] || listaPreco[0]">
         <div>
             <button type="submit" class="btnDelete" :click="deletePM">
                 <font-awesome-icon class="iconBtnDelete" icon="minus"/>
             </button>
             &emsp;<font-awesome-icon icon="coins"/>&nbsp;
-            <b>{{ formatNumber(quantidade) }}</b>&emsp;&emsp;
+            <b>{{ formatNumber(listaQuantidade[0]) }}</b>&emsp;&emsp;
             <font-awesome-icon icon="dollar-sign"/>&nbsp;
-            <b>{{ formatPrice(preco) }}</b> {{listaQuantidade}} {{listaPreco}}
+            <b>{{ formatPrice(listaPreco[0]) }}</b>
         </div>
     </div>
     <div id="publish"></div>
