@@ -48,12 +48,12 @@ export default {
         }
     },
     methods: {
-    formatPrice(value) {
-        let val = (value/1).toFixed(2).replace('.', ',')
-        return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
-    },
     formatNumber(value) {
         let val = (value/1).toFixed(0).replace('.', ',')
+        return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
+    },
+    formatPrice(value) {
+        let val = (value/1).toFixed(2).replace('.', ',')
         return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
     }
 }
@@ -174,8 +174,6 @@ export default {
     #listaPMs{
         margin-top: 30px;
         height: 100px;
-        background: #fff;
-        min-width: 300px;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
