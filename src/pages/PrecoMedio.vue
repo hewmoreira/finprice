@@ -6,7 +6,10 @@
     <div id="calculadoraPrecoMedio">
         <input type="number" class="quantField" placeholder="Quantidade" v-model="quantidade">
         <input type="number" class="priceField" placeholder="R$ 0,00" v-model="preco">
-        <button type="submit" class="btnCalc" @click="calcPM" :disabled="!quantidade || !preco">
+        <button type="submit" class="btnCalc" v-if="!firstContact" @click="calcPM" :disabled="!quantidade || !preco">
+            <font-awesome-icon class="iconBtnCalc" icon="plus"/>
+        </button>
+        <button type="submit" class="btnCalc" v-if="firstContact" @click="calcListaGeralPM" :disabled="!quantidade || !preco">
             <font-awesome-icon class="iconBtnCalc" icon="plus"/>
         </button>
     </div>
@@ -22,8 +25,8 @@
                 <b>{{ formatPrice(preco) }}</b>
         </div>
     </div>
-    <div id="listaPMs" v-if="listaQuantidade[0] || listaPreco[0]">
-        <div>
+    <div id="listaPMs"  v-if="listaQuantidade[0] || listaPreco[0]" >
+        <!-- <div>
             <button type="submit" class="btnDelete" :click="deletePM">
                 <font-awesome-icon class="iconBtnDelete" icon="minus"/>
             </button>
@@ -31,7 +34,25 @@
             <b>{{ formatNumber(listaQuantidade[0]) }}</b>&emsp;&emsp;
             <font-awesome-icon icon="dollar-sign"/>&nbsp;
             <b>{{ formatPrice(listaPreco[0]) }}</b>
+            {{listaQuantidade}} | {{listaPreco}}
+        </div> -->
+        <div>
+            <button type="submit" class="btnDelete" :click="deletePM">
+                <font-awesome-icon class="iconBtnDelete" icon="minus"/>
+            </button>
+
+            &emsp;<font-awesome-icon icon="coins"/>&nbsp;
+            <b>{{ formatNumber(listaQuantidade[0]) }}</b>&emsp;&emsp;
+
+            <font-awesome-icon icon="dollar-sign"/>&nbsp;
+            <b>{{ formatPrice(listaPreco[0]) }}</b>
+            
+            <!-- {{listaQuantidade}} | {{listaPreco}} -->
+            {{listaGeral}}
         </div>
+        <!-- <div v-for="quants in listaQuantidade" :key="quants">
+            <span>{{quants}}</span>
+        </div> -->
     </div>
     <div id="publish"></div>
   </main>
@@ -45,7 +66,9 @@ export default {
             quantidade: '',
             listaQuantidade: [],
             preco: '',
-            listaPreco: []
+            listaPreco: [],
+            listaGeral: [],
+            firstContact: true
         }
     },
     methods: {
@@ -60,6 +83,13 @@ export default {
     calcPM(){
         this.listaQuantidade.push(this.quantidade)
         this.listaPreco.push(this.preco)
+    },
+    calcListaGeralPM(){
+        this.listaQuantidade.push(this.quantidade)
+        this.listaPreco.push(this.preco)
+        this.listaGeral.push(this.listaQuantidade)
+        this.listaGeral.push(this.listaPreco)
+        return this.firstContact = false
     }
 }
 }
