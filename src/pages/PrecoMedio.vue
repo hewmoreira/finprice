@@ -23,15 +23,15 @@
       >
         <font-awesome-icon class="iconBtnCalc" icon="plus" />
       </button>
-      <button
+      <!-- <button
         type="submit"
         class="btnCalc"
         v-if="firstContact"
-        @click="calcListaGeralPM"
+        @click="calcPM"
         :disabled="!quantidade || !preco"
       >
         <font-awesome-icon class="iconBtnCalc" icon="plus" />
-      </button>
+      </button> -->
     </div>
     <div id="result">
       <div id="divQtdTotal">
@@ -82,8 +82,8 @@ export default {
       listaQuantidade: [],
       preco: "",
       listaPreco: [],
-      listaGeral: [],
-      firstContact: true,
+    //   listaGeral: [],
+    //   firstContact: true,
     };
   },
   methods: {
@@ -99,13 +99,13 @@ export default {
       this.listaQuantidade.push(this.quantidade);
       this.listaPreco.push(this.preco);
     },
-    calcListaGeralPM() {
-      this.listaQuantidade.push(this.quantidade);
-      this.listaPreco.push(this.preco);
-      this.listaGeral.push(this.listaQuantidade);
-      this.listaGeral.push(this.listaPreco);
-      this.firstContact = false;
-    }
+    // calcListaGeralPM() {
+    //   this.listaQuantidade.push(this.quantidade);
+    //   this.listaPreco.push(this.preco);
+    //   this.listaGeral.push(this.listaQuantidade);
+    //   this.listaGeral.push(this.listaPreco);
+    //   this.firstContact = false;
+    // }
   },
 };
 </script>
