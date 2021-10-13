@@ -6,7 +6,7 @@
     <div id="calculadoraPrecoMedio">
         <input type="number" class="quantField" placeholder="Quantidade" v-model="quantidade">
         <input type="number" class="priceField" placeholder="R$ 0,00" v-model="preco">
-        <button type="submit" class="btnCalc" :click="calcPM">
+        <button type="submit" class="btnCalc" @click="calcPM" :disabled="!quantidade || !preco">
             <font-awesome-icon class="iconBtnCalc" icon="plus"/>
         </button>
     </div>
@@ -30,7 +30,7 @@
             &emsp;<font-awesome-icon icon="coins"/>&nbsp;
             <b>{{ formatNumber(quantidade) }}</b>&emsp;&emsp;
             <font-awesome-icon icon="dollar-sign"/>&nbsp;
-            <b>{{ formatPrice(preco) }}</b>
+            <b>{{ formatPrice(preco) }}</b> {{listaQuantidade}} {{listaPreco}}
         </div>
     </div>
     <div id="publish"></div>
@@ -43,8 +43,9 @@ export default {
     data(){
         return{
             quantidade: '',
+            listaQuantidade: [],
             preco: '',
-            listaPMs: []
+            listaPreco: []
         }
     },
     methods: {
@@ -55,6 +56,11 @@ export default {
     formatPrice(value) {
         let val = (value/1).toFixed(2).replace('.', ',')
         return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
+    },
+    calcPM(){
+        this.listaQuantidade.push(this.quantidade)
+        this.listaPreco.push(this.preco)
+ 
     }
 }
 }
@@ -186,8 +192,6 @@ export default {
         height: 18px;
         border: none;
         border-radius: 5px;
-        /* display: flex; */
-        /* justify-content: center; */
         color: var(--color-white1);
         background: var(--color-background-footer);
         transition: 0.35s;
