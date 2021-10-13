@@ -68,6 +68,7 @@
         <font-awesome-icon icon="dollar-sign" />&nbsp;
         <b>{{ formatPrice(listaPreco[index - 1]) }}</b>
       </div>
+      <!-- {{quantidadeTotal}} -->
     </div>
     <div id="publish"></div>
   </main>
@@ -82,6 +83,8 @@ export default {
       listaQuantidade: [],
       preco: "",
       listaPreco: [],
+      quantidadeTotal: '',
+      precoMedioTotal: '',
     //   listaGeral: [],
     //   firstContact: true,
     };
@@ -98,7 +101,11 @@ export default {
     calcPM() {
       this.listaQuantidade.push(this.quantidade);
       this.listaPreco.push(this.preco);
+      this.calcQuantTotal()
     },
+    calcQuantTotal(){
+        this.quantidadeTotal = this.listaQuantidade.reduce((quantidadeTotal, currentElement) => quantidadeTotal + currentElement)
+    }
     // calcListaGeralPM() {
     //   this.listaQuantidade.push(this.quantidade);
     //   this.listaPreco.push(this.preco);
