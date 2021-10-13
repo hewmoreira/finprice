@@ -15,19 +15,23 @@
                 Quantidade Total: &nbsp;
                 <font-awesome-icon icon="coins"/>&nbsp;
                 <b>{{ formatNumber(quantidade) }}</b>
-            <!-- <div class="qtdTotal">
-            </div> -->
         </div>
         <div id="divPMTotal">
                 Preço Médio: &nbsp;
                 <font-awesome-icon icon="dollar-sign"/>&nbsp;
                 <b>{{ formatPrice(preco) }}</b>
-            <!-- <div class="pmAtual">
-            </div> -->
         </div>
     </div>
-    <div id="listaCalcPM">
-
+    <div id="listaPMs">
+        <div>
+            <button type="submit" class="btnDelete" :click="deletePM">
+                <font-awesome-icon class="iconBtnDelete" icon="minus"/>
+            </button>
+            &emsp;<font-awesome-icon icon="coins"/>&nbsp;
+            <b>{{ formatNumber(quantidade) }}</b>&emsp;&emsp;
+            <font-awesome-icon icon="dollar-sign"/>&nbsp;
+            <b>{{ formatPrice(preco) }}</b>
+        </div>
     </div>
     <div id="publish"></div>
   </main>
@@ -158,28 +162,50 @@ export default {
         padding: 10px;
         border: 2px dashed var(--color-white1);
     }
-
-    /* #divQtdTotal{
-        width: auto;
-    } */
         
     .qtdTotal{
         font-size: 20px;
     }
 
-    /* #divPMTotal{
-        width: auto;
-    } */
-
     .pmAtual{
         font-size: 20px;
     }
 
-    #listaCalcPM{
+    #listaPMs{
         margin-top: 30px;
-        width: 600px;
         height: 100px;
         background: #fff;
+        min-width: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 10px;
+        border: 2px dashed var(--color-white1);
+    }
+
+    .btnDelete{
+        width: 20px;
+        height: 18px;
+        border: none;
+        border-radius: 5px;
+        /* display: flex; */
+        /* justify-content: center; */
+        color: var(--color-white1);
+        background: var(--color-background-footer);
+        transition: 0.35s;
+        
+    }
+
+    .btnDelete:hover{
+        background: var(--color-yellow1);
+        color: var(--color-black2);
+        transition: 0.35s;
+    }
+
+    .iconBtnDelete{
+        padding: 0;
+        margin-top: 1px;
+        width: 20px;
     }
 
     #publish{
