@@ -60,7 +60,6 @@ export default {
     calcPM(){
         this.listaQuantidade.push(this.quantidade)
         this.listaPreco.push(this.preco)
- 
     }
 }
 }
@@ -199,7 +198,7 @@ export default {
     }
 
     .btnDelete:hover{
-        background: var(--color-yellow1);
+        background: var(--color-orange1);
         color: var(--color-black2);
         transition: 0.35s;
     }
