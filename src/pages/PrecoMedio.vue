@@ -89,7 +89,7 @@ export default {
         this.listaPreco.push(this.preco)
         this.listaGeral.push(this.listaQuantidade)
         this.listaGeral.push(this.listaPreco)
-        return this.firstContact = false
+        this.firstContact = false
     }
 }
 }
