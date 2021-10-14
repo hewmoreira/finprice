@@ -46,7 +46,7 @@
             <b>{{ formatPrice(listaPreco[0]) }}</b>
             {{listaQuantidade}} | {{listaPreco}}
         </div> -->
-      <div v-for="index in listaQuantidade.length" :key="index">
+      <div v-for="index in listaQuantidade.length" :key="index" style="background-color: red">
         <button type="submit" class="btnDelete" :click="deletePM">
           <font-awesome-icon class="iconBtnDelete" icon="minus" />
         </button>
@@ -58,7 +58,6 @@
         <font-awesome-icon icon="dollar-sign" />&nbsp;
         <b>{{ formatPrice(listaPreco[index - 1]) }}</b>
       </div>
-      <!-- {{result}} -->
     </div>
     <div id="publish"></div>
   </main>
