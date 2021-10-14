@@ -35,7 +35,7 @@
         <b>{{ formatPrice(precoMedioTotal) }}</b>
       </div>
     </div>
-    <div id="listaPMs" v-if="listaQuantidade[0] || listaPreco[0]">
+    <div id="divListaPM" v-if="listaQuantidade[0] || listaPreco[0]">
       <!-- <div>
             <button type="submit" class="btnDelete" :click="deletePM">
                 <font-awesome-icon class="iconBtnDelete" icon="minus"/>
@@ -46,19 +46,22 @@
             <b>{{ formatPrice(listaPreco[0]) }}</b>
             {{listaQuantidade}} | {{listaPreco}}
         </div> -->
-      <div v-for="index in listaQuantidade.length" :key="index">
-        <button type="submit" class="btnDelete" @click="deleteSelectPM(index)">
-          <font-awesome-icon class="iconBtnDelete" icon="minus" />
-        </button>
-
-        &emsp;<font-awesome-icon icon="coins" />&nbsp;
-        <b>{{ formatNumber(listaQuantidade[index - 1]) }}</b
-        >&emsp;&emsp;
-
-        <font-awesome-icon icon="dollar-sign" />&nbsp;
-        <b>{{ formatPrice(listaPreco[index - 1]) }}</b>
+      <div id='listaPMs' v-for="index in listaQuantidade.length" :key="index">
+        <div>
+          <button type="submit" class="btnDelete" @click="deleteSelectPM(index)">
+            <font-awesome-icon class="iconBtnDelete" icon="minus" />
+          </button>
+        </div>
+        <div>
+          <font-awesome-icon icon="coins" />
+          <b>{{ formatNumber(listaQuantidade[index - 1]) }}</b
+          >        
+        </div>
+        <div>
+          <font-awesome-icon icon="dollar-sign" />
+          <b>{{ formatPrice(listaPreco[index - 1]) }}</b>
+        </div>
       </div>
-      {{result}} {{listaQuantidade}} {{listaPreco}}
     </div>
     <div id="publish"></div>
   </main>
@@ -226,14 +229,25 @@ main {
   font-size: 20px;
 }
 
-#listaPMs {
+#divListaPM {
   margin-top: 30px;
+  min-width: 300px;
   height: 100px;
-  display: flex;
+  /* display: inline-block; */
+  /* justify-content: space-between; */
+  /* align-items: center;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-around; */
   padding: 10px;
   border: 2px dashed var(--color-white1);
+}
+
+#listaPMs{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+  /* background-color: red; */
 }
 
 .btnDelete {
