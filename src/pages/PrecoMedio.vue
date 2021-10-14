@@ -5,12 +5,15 @@
       <input
         type="number"
         class="quantField"
+        ref="input"
         placeholder="Quantidade"
         v-model="quantidade"
       />
       <input
         type="number"
         class="priceField"
+        ref='input'
+        step="0.01"
         placeholder="R$ 0,00"
         v-model="preco"
       />
@@ -119,7 +122,7 @@ export default {
         yellow: false,
         green: false,
         orange: false,
-      },
+      }
     };
   },
   methods: {
@@ -136,6 +139,9 @@ export default {
       this.listaPreco.push(this.preco);
       this.corAtivaIcon.yellow = true;
       this.corAtivaIcon.green = true;
+      this.$refs.input.value = '';
+      this.quantidade = '';
+      this.preco = '';
 
       this.calcQuantTotal();
       this.loopCalc();
@@ -173,8 +179,8 @@ export default {
       this.corAtivaIcon.yellow = false;
       this.corAtivaIcon.orange = false;
       this.corAtivaIcon.green = false;
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -186,7 +192,7 @@ main {
 
 #title {
   color: var(--color-black2);
-  font-size: 30px;
+  font-size: 45px;
   text-align: center;
   margin-top: 100px;
 }
