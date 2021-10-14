@@ -46,8 +46,8 @@
             <b>{{ formatPrice(listaPreco[0]) }}</b>
             {{listaQuantidade}} | {{listaPreco}}
         </div> -->
-      <div v-for="index in listaQuantidade.length" :key="index" style="background-color: red">
-        <button type="submit" class="btnDelete" :click="deletePM">
+      <div v-for="index in listaQuantidade.length" :key="index">
+        <button type="submit" class="btnDelete" @click="deleteSelectPM(index)">
           <font-awesome-icon class="iconBtnDelete" icon="minus" />
         </button>
 
@@ -58,6 +58,7 @@
         <font-awesome-icon icon="dollar-sign" />&nbsp;
         <b>{{ formatPrice(listaPreco[index - 1]) }}</b>
       </div>
+      {{result}} {{listaQuantidade}} {{listaPreco}}
     </div>
     <div id="publish"></div>
   </main>
@@ -91,13 +92,13 @@ export default {
       this.listaQuantidade.push(this.quantidade);
       this.listaPreco.push(this.preco);
       this.calcQuantTotal()
+      this.loopCalc()
     },
     calcQuantTotal(){
-        this.quantidadeTotal = this.listaQuantidade.reduce((quantidadeTotal, currentElement) => quantidadeTotal + currentElement)
-        this.loopCalc()
+      this.quantidadeTotal = this.listaQuantidade.reduce((quantidadeTotal, currentElement) => quantidadeTotal + currentElement)
     },
     calcPMTotal(){
-        this.precoMedioTotal = (this.result.reduce((precoMedioTotal, currentElement) => precoMedioTotal + currentElement)) / this.quantidadeTotal
+      this.precoMedioTotal = (this.result.reduce((precoMedioTotal, currentElement) => precoMedioTotal + currentElement)) / this.quantidadeTotal
     },
     loopCalc(){
         for (let i = 0; i < this.listaQuantidade.length; i++) {
@@ -105,6 +106,13 @@ export default {
         }
         this.result.push(this.multi)
         this.calcPMTotal()
+    },
+    deleteSelectPM(index){
+      this.result.splice(index - 1, 1)
+      this.listaQuantidade.splice(index - 1, 1)
+      this.listaPreco.splice(index - 1, 1)
+      this.calcQuantTotal()
+      this.calcPMTotal()
     }
   }
 };
