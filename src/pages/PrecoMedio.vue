@@ -26,26 +26,22 @@
     <div id="result">
       <div id="divQtdTotal">
         Quantidade Total: &nbsp;
-        <font-awesome-icon icon="coins" />&nbsp;
-        <b>{{ formatNumber(quantidadeTotal) }}</b>
+        <font-awesome-icon icon="coins" id="iconResult" 
+        :class="corAtivaIcon.orange ? 'orangeColor' : corAtivaIcon.yellow ? 'yellowColor' : ''"/>&nbsp;
+        <b id="iconResult" :class="corAtivaIcon.orange ? 'orangeColor' : corAtivaIcon.yellow ? 'yellowColor' : ''">
+          {{ formatNumber(quantidadeTotal) }}
+        </b>
       </div>
       <div id="divPMTotal">
         Preço Médio: &nbsp;
-        <font-awesome-icon icon="dollar-sign" />&nbsp;
-        <b>{{ formatPrice(precoMedioTotal) }}</b>
+        <font-awesome-icon icon="dollar-sign" id="iconResult" 
+        :class="corAtivaIcon.orange ? 'orangeColor' : corAtivaIcon.green ? 'greenColor' : ''"/>&nbsp;
+        <b id="iconResult" :class="corAtivaIcon.orange ? 'orangeColor' : corAtivaIcon.green ? 'greenColor' : ''">
+          {{ formatPrice(precoMedioTotal) }}
+        </b>
       </div>
     </div>
     <div id="divListaPM" v-if="listaQuantidade[0] || listaPreco[0]">
-      <!-- <div>
-            <button type="submit" class="btnDelete" :click="deletePM">
-                <font-awesome-icon class="iconBtnDelete" icon="minus"/>
-            </button>
-            &emsp;<font-awesome-icon icon="coins"/>&nbsp;
-            <b>{{ formatNumber(listaQuantidade[0]) }}</b>&emsp;&emsp;
-            <font-awesome-icon icon="dollar-sign"/>&nbsp;
-            <b>{{ formatPrice(listaPreco[0]) }}</b>
-            {{listaQuantidade}} | {{listaPreco}}
-        </div> -->
       <div id='listaPMs' v-for="index in listaQuantidade.length" :key="index">
         <div>
           <button type="submit" class="btnDelete" @click="deleteSelectPM(index)">
@@ -53,7 +49,7 @@
           </button>
         </div>
         <div>
-          <font-awesome-icon icon="coins" />&nbsp;
+          <font-awesome-icon icon="coins"/>&nbsp;
           <b>{{ formatNumber(listaQuantidade[index - 1]) }}</b
           >        
         </div>
@@ -79,7 +75,13 @@ export default {
       quantidadeTotal: '',
       precoMedioTotal: 0,
       multi: 0,
-      result: []
+      result: [],
+      corAtivaIcon: {
+        yellow: false,
+        green: false,
+        orange: false
+
+      }
     };
   },
   methods: {
@@ -94,8 +96,12 @@ export default {
     calcPM() {
       this.listaQuantidade.push(this.quantidade);
       this.listaPreco.push(this.preco);
+      this.corAtivaIcon.yellow = true;
+      this.corAtivaIcon.green = true;
+
       this.calcQuantTotal()
       this.loopCalc()
+      setTimeout(this.resetandoCores, 350)
     },
     calcQuantTotal(){
       this.quantidadeTotal = this.listaQuantidade.reduce((quantidadeTotal, currentElement) => quantidadeTotal + currentElement)
@@ -114,9 +120,18 @@ export default {
       this.result.splice(index - 1, 1)
       this.listaQuantidade.splice(index - 1, 1)
       this.listaPreco.splice(index - 1, 1)
+      this.corAtivaIcon.orange = true;
+
       this.calcQuantTotal()
       this.calcPMTotal()
+      setTimeout(this.resetandoCores, 350)
+    },
+    resetandoCores(){
+      this.corAtivaIcon.yellow = false
+      this.corAtivaIcon.orange = false
+      this.corAtivaIcon.green = false
     }
+
   }
 };
 </script>
@@ -219,6 +234,26 @@ main {
   justify-content: space-around;
   padding: 10px;
   border: 2px dashed var(--color-white1);
+}
+
+#iconResult{
+  transition: 0.8s;
+  color: var(--color-black2)
+}
+
+#iconResult.yellowColor{
+  transition: 0s;
+  color: var(--color-yellow1)
+}
+
+#iconResult.orangeColor{
+  transition: 0s;
+  color: var(--color-orange1);
+}
+
+#iconResult.greenColor{
+  transition: 0s;
+  color: var(--color-green1);
 }
 
 .qtdTotal {
