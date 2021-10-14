@@ -53,12 +53,12 @@
           </button>
         </div>
         <div>
-          <font-awesome-icon icon="coins" />
+          <font-awesome-icon icon="coins" />&nbsp;
           <b>{{ formatNumber(listaQuantidade[index - 1]) }}</b
           >        
         </div>
         <div>
-          <font-awesome-icon icon="dollar-sign" />
+          <font-awesome-icon icon="dollar-sign" />&nbsp;
           <b>{{ formatPrice(listaPreco[index - 1]) }}</b>
         </div>
       </div>
@@ -232,22 +232,19 @@ main {
 #divListaPM {
   margin-top: 30px;
   min-width: 300px;
-  height: 100px;
+  min-height: 10px;
   /* display: inline-block; */
-  /* justify-content: space-between; */
-  /* align-items: center;
-  flex-direction: column;
-  justify-content: space-around; */
   padding: 10px;
   border: 2px dashed var(--color-white1);
 }
 
 #listaPMs{
+  margin-top: 2px;
+  margin-bottom: 2px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 5px;
-  /* background-color: red; */
 }
 
 .btnDelete {
