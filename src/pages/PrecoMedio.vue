@@ -17,32 +17,22 @@
       <button
         type="submit"
         class="btnCalc"
-        v-if="!firstContact"
         @click="calcPM"
         :disabled="!quantidade || !preco"
       >
         <font-awesome-icon class="iconBtnCalc" icon="plus" />
       </button>
-      <!-- <button
-        type="submit"
-        class="btnCalc"
-        v-if="firstContact"
-        @click="calcPM"
-        :disabled="!quantidade || !preco"
-      >
-        <font-awesome-icon class="iconBtnCalc" icon="plus" />
-      </button> -->
     </div>
     <div id="result">
       <div id="divQtdTotal">
         Quantidade Total: &nbsp;
         <font-awesome-icon icon="coins" />&nbsp;
-        <b>{{ formatNumber(quantidade) }}</b>
+        <b>{{ formatNumber(quantidadeTotal) }}</b>
       </div>
       <div id="divPMTotal">
         Preço Médio: &nbsp;
         <font-awesome-icon icon="dollar-sign" />&nbsp;
-        <b>{{ formatPrice(preco) }}</b>
+        <b>{{ formatPrice(precoMedioTotal) }}</b>
       </div>
     </div>
     <div id="listaPMs" v-if="listaQuantidade[0] || listaPreco[0]">
@@ -68,7 +58,7 @@
         <font-awesome-icon icon="dollar-sign" />&nbsp;
         <b>{{ formatPrice(listaPreco[index - 1]) }}</b>
       </div>
-      <!-- {{quantidadeTotal}} -->
+      <!-- {{result}} -->
     </div>
     <div id="publish"></div>
   </main>
@@ -84,9 +74,9 @@ export default {
       preco: "",
       listaPreco: [],
       quantidadeTotal: '',
-      precoMedioTotal: '',
-    //   listaGeral: [],
-    //   firstContact: true,
+      precoMedioTotal: 0,
+      multi: 0,
+      result: []
     };
   },
   methods: {
@@ -105,15 +95,19 @@ export default {
     },
     calcQuantTotal(){
         this.quantidadeTotal = this.listaQuantidade.reduce((quantidadeTotal, currentElement) => quantidadeTotal + currentElement)
+        this.loopCalc()
+    },
+    calcPMTotal(){
+        this.precoMedioTotal = (this.result.reduce((precoMedioTotal, currentElement) => precoMedioTotal + currentElement)) / this.quantidadeTotal
+    },
+    loopCalc(){
+        for (let i = 0; i < this.listaQuantidade.length; i++) {
+            this.multi = this.listaQuantidade[i] * this.listaPreco[i]
+        }
+        this.result.push(this.multi)
+        this.calcPMTotal()
     }
-    // calcListaGeralPM() {
-    //   this.listaQuantidade.push(this.quantidade);
-    //   this.listaPreco.push(this.preco);
-    //   this.listaGeral.push(this.listaQuantidade);
-    //   this.listaGeral.push(this.listaPreco);
-    //   this.firstContact = false;
-    // }
-  },
+  }
 };
 </script>
 
