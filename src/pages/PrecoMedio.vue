@@ -26,32 +26,71 @@
     <div id="result">
       <div id="divQtdTotal">
         Quantidade Total: &nbsp;
-        <font-awesome-icon icon="coins" id="iconResult" 
-        :class="corAtivaIcon.orange ? 'orangeColor' : corAtivaIcon.yellow ? 'yellowColor' : ''"/>&nbsp;
-        <b id="iconResult" :class="corAtivaIcon.orange ? 'orangeColor' : corAtivaIcon.yellow ? 'yellowColor' : ''">
+        <font-awesome-icon
+          icon="coins"
+          id="iconResult"
+          :class="
+            corAtivaIcon.orange
+              ? 'orangeColor'
+              : corAtivaIcon.yellow
+              ? 'yellowColor'
+              : ''
+          "
+        />&nbsp;
+        <b
+          id="iconResult"
+          :class="
+            corAtivaIcon.orange
+              ? 'orangeColor'
+              : corAtivaIcon.yellow
+              ? 'yellowColor'
+              : ''
+          "
+        >
           {{ formatNumber(quantidadeTotal) }}
         </b>
       </div>
       <div id="divPMTotal">
         Preço Médio: &nbsp;
-        <font-awesome-icon icon="dollar-sign" id="iconResult" 
-        :class="corAtivaIcon.orange ? 'orangeColor' : corAtivaIcon.green ? 'greenColor' : ''"/>&nbsp;
-        <b id="iconResult" :class="corAtivaIcon.orange ? 'orangeColor' : corAtivaIcon.green ? 'greenColor' : ''">
+        <font-awesome-icon
+          icon="dollar-sign"
+          id="iconResult"
+          :class="
+            corAtivaIcon.orange
+              ? 'orangeColor'
+              : corAtivaIcon.green
+              ? 'greenColor'
+              : ''
+          "
+        />&nbsp;
+        <b
+          id="iconResult"
+          :class="
+            corAtivaIcon.orange
+              ? 'orangeColor'
+              : corAtivaIcon.green
+              ? 'greenColor'
+              : ''
+          "
+        >
           {{ formatPrice(precoMedioTotal) }}
         </b>
       </div>
     </div>
     <div id="divListaPM" v-if="listaQuantidade[0] || listaPreco[0]">
-      <div id='listaPMs' v-for="index in listaQuantidade.length" :key="index">
+      <div id="listaPMs" v-for="index in listaQuantidade.length" :key="index">
         <div>
-          <button type="submit" class="btnDelete" @click="deleteSelectPM(index)">
+          <button
+            type="submit"
+            class="btnDelete"
+            @click="deleteSelectPM(index)"
+          >
             <font-awesome-icon class="iconBtnDelete" icon="minus" />
           </button>
         </div>
         <div>
-          <font-awesome-icon icon="coins"/>&nbsp;
-          <b>{{ formatNumber(listaQuantidade[index - 1]) }}</b
-          >        
+          <font-awesome-icon icon="coins" />&nbsp;
+          <b>{{ formatNumber(listaQuantidade[index - 1]) }}</b>
         </div>
         <div>
           <font-awesome-icon icon="dollar-sign" />&nbsp;
@@ -72,16 +111,15 @@ export default {
       listaQuantidade: [],
       preco: "",
       listaPreco: [],
-      quantidadeTotal: '',
+      quantidadeTotal: "",
       precoMedioTotal: 0,
       multi: 0,
       result: [],
       corAtivaIcon: {
         yellow: false,
         green: false,
-        orange: false
-
-      }
+        orange: false,
+      },
     };
   },
   methods: {
@@ -99,40 +137,44 @@ export default {
       this.corAtivaIcon.yellow = true;
       this.corAtivaIcon.green = true;
 
-      this.calcQuantTotal()
-      this.loopCalc()
-      setTimeout(this.resetandoCores, 350)
+      this.calcQuantTotal();
+      this.loopCalc();
+      setTimeout(this.resetandoCores, 350);
     },
-    calcQuantTotal(){
-      this.quantidadeTotal = this.listaQuantidade.reduce((quantidadeTotal, currentElement) => quantidadeTotal + currentElement)
+    calcQuantTotal() {
+      this.quantidadeTotal = this.listaQuantidade.reduce(
+        (quantidadeTotal, currentElement) => quantidadeTotal + currentElement
+      );
     },
-    calcPMTotal(){
-      this.precoMedioTotal = (this.result.reduce((precoMedioTotal, currentElement) => precoMedioTotal + currentElement)) / this.quantidadeTotal
+    calcPMTotal() {
+      this.precoMedioTotal =
+        this.result.reduce(
+          (precoMedioTotal, currentElement) => precoMedioTotal + currentElement
+        ) / this.quantidadeTotal;
     },
-    loopCalc(){
-        for (let i = 0; i < this.listaQuantidade.length; i++) {
-            this.multi = this.listaQuantidade[i] * this.listaPreco[i]
-        }
-        this.result.push(this.multi)
-        this.calcPMTotal()
+    loopCalc() {
+      for (let i = 0; i < this.listaQuantidade.length; i++) {
+        this.multi = this.listaQuantidade[i] * this.listaPreco[i];
+      }
+      this.result.push(this.multi);
+      this.calcPMTotal();
     },
-    deleteSelectPM(index){
-      this.result.splice(index - 1, 1)
-      this.listaQuantidade.splice(index - 1, 1)
-      this.listaPreco.splice(index - 1, 1)
+    deleteSelectPM(index) {
+      this.result.splice(index - 1, 1);
+      this.listaQuantidade.splice(index - 1, 1);
+      this.listaPreco.splice(index - 1, 1);
       this.corAtivaIcon.orange = true;
 
-      this.calcQuantTotal()
-      this.calcPMTotal()
-      setTimeout(this.resetandoCores, 350)
+      this.calcQuantTotal();
+      this.calcPMTotal();
+      setTimeout(this.resetandoCores, 350);
     },
-    resetandoCores(){
-      this.corAtivaIcon.yellow = false
-      this.corAtivaIcon.orange = false
-      this.corAtivaIcon.green = false
-    }
-
-  }
+    resetandoCores() {
+      this.corAtivaIcon.yellow = false;
+      this.corAtivaIcon.orange = false;
+      this.corAtivaIcon.green = false;
+    },
+  },
 };
 </script>
 
@@ -236,22 +278,22 @@ main {
   border: 2px dashed var(--color-white1);
 }
 
-#iconResult{
+#iconResult {
   transition: 0.8s;
-  color: var(--color-black2)
+  color: var(--color-black2);
 }
 
-#iconResult.yellowColor{
+#iconResult.yellowColor {
   transition: 0s;
-  color: var(--color-yellow1)
+  color: var(--color-yellow1);
 }
 
-#iconResult.orangeColor{
+#iconResult.orangeColor {
   transition: 0s;
   color: var(--color-orange1);
 }
 
-#iconResult.greenColor{
+#iconResult.greenColor {
   transition: 0s;
   color: var(--color-green1);
 }
@@ -273,7 +315,7 @@ main {
   border: 2px dashed var(--color-white1);
 }
 
-#listaPMs{
+#listaPMs {
   margin-top: 2px;
   margin-bottom: 2px;
   display: flex;
