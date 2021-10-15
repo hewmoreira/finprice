@@ -44,11 +44,9 @@ footer{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* flex-direction: row; */
 }
 
 #end {
-    /* background-color: blue; */
     font-size: 15px;
     width: 100%;
     margin-left: 25%;
