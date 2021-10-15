@@ -2,8 +2,7 @@
   <header>
     <nav class="container">
       <a id="link-menu"
-        ><img
-          src="../assets/menu.svg"
+        ><font-awesome-icon icon="bars"
           alt="menu"
           id="menu-button"
           @click="menuActive = !menuActive"
@@ -65,8 +64,10 @@ nav {
 }
 
 #menu-button {
-  width: 22px;
+  width: 25px;
+  font-size: 25px;
   margin-top: 7px;
+  color: var(--color-white1);
 }
 
 #menu-overlay {
