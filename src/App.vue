@@ -9,7 +9,7 @@
 <script>
 import "./styles/global.css";
 import Header from "./components/header.vue";
-import PrecoMedio from "./pages/PrecoMedio.vue";
+import PrecoMedio from "./pages/precoMedio/PrecoMedio.vue";
 import Footer from './components/footer.vue'
 
 export default {
