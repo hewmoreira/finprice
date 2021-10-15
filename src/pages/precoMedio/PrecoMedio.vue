@@ -1,7 +1,6 @@
 <template>
   <main>
     <div id="title">Calculadora de Preço Médio</div>
-    <!-- <CalculadoraPrecoMedio /> -->
     <div id="calculadoraPrecoMedio">
       <input
         type="number"
@@ -107,12 +106,8 @@
 </template>
 
 <script>
-// import CalculadoraPrecoMedio from './pages/calculadora.vue'
 export default {
   name: "PrecoMedio",
-  // components: {
-  //   CalculadoraPrecoMedio
-  // },
   data() {
     return {
       quantidade: "",
