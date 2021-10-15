@@ -28,8 +28,15 @@ a{
     transition: 0.2s;
 }
 
+a:-webkit-any-link {
+    color: var(--color-white1);
+    cursor: pointer;
+    text-decoration: none;
+}
+
 a:hover{
-    opacity: 0.8;
+    transition: 0.5s;
+    color: var(--color-yellow1);
 }
 
 .container{
