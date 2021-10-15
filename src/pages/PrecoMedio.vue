@@ -291,7 +291,7 @@ main {
 }
 
 #result {
-  min-width: 300px;
+  min-width: auto;
   height: 100px;
   display: flex;
   flex-direction: column;
