@@ -12,7 +12,7 @@
       <input
         type="number"
         class="priceField"
-        ref='input'
+        ref="input"
         step="0.01"
         placeholder="R$ 0,00"
         v-model="preco"
@@ -122,7 +122,7 @@ export default {
         yellow: false,
         green: false,
         orange: false,
-      }
+      },
     };
   },
   methods: {
@@ -139,16 +139,16 @@ export default {
       this.listaPreco.push(this.preco);
       this.corAtivaIcon.yellow = true;
       this.corAtivaIcon.green = true;
-      this.$refs.input.value = '';
-      this.quantidade = '';
-      this.preco = '';
+      this.$refs.input.value = "";
+      this.quantidade = "";
+      this.preco = "";
 
       this.calcQuantTotal();
       this.loopCalc();
       setTimeout(this.resetandoCores, 350);
     },
     calcQuantTotal() {
-      if (this.listaQuantidade != ''){
+      if (this.listaQuantidade != "") {
         this.quantidadeTotal = this.listaQuantidade.reduce(
           (quantidadeTotal, currentElement) => quantidadeTotal + currentElement
         );
@@ -157,13 +157,14 @@ export default {
       }
     },
     calcPMTotal() {
-      if (this.listaQuantidade != ''){
+      if (this.listaQuantidade != "") {
         this.precoMedioTotal =
           this.result.reduce(
-            (precoMedioTotal, currentElement) => precoMedioTotal + currentElement
+            (precoMedioTotal, currentElement) =>
+              precoMedioTotal + currentElement
           ) / this.quantidadeTotal;
       } else {
-        this.precoMedioTotal = 0
+        this.precoMedioTotal = 0;
       }
     },
     loopCalc() {
@@ -174,7 +175,7 @@ export default {
       this.calcPMTotal();
     },
     deleteSelectPM(index) {
-      if (index > 1){
+      if (index > 1) {
         this.result.splice(index - 1, 1);
         this.listaQuantidade.splice(index - 1, 1);
         this.listaPreco.splice(index - 1, 1);
@@ -186,7 +187,6 @@ export default {
         this.quantidadeTotal = 0;
         this.corAtivaIcon.orange = true;
       }
-      // console.log('deletei');
       this.calcQuantTotal();
       this.calcPMTotal();
       setTimeout(this.resetandoCores, 350);
@@ -195,8 +195,8 @@ export default {
       this.corAtivaIcon.yellow = false;
       this.corAtivaIcon.orange = false;
       this.corAtivaIcon.green = false;
-    }
-  }
+    },
+  },
 };
 </script>
 
