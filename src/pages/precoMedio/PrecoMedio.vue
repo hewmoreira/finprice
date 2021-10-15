@@ -102,12 +102,18 @@
       </div>
     </div>
     <div id="publish"></div>
+    <DescricaoPrecoMedio />
   </main>
 </template>
 
 <script>
+import DescricaoPrecoMedio from './pages/descricao.vue'
+
 export default {
   name: "PrecoMedio",
+  components: {
+    DescricaoPrecoMedio
+  },
   data() {
     return {
       quantidade: "",
