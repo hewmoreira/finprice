@@ -5,12 +5,15 @@
       <input
         type="number"
         class="quantField"
+        ref="input"
         placeholder="Quantidade"
         v-model="quantidade"
       />
       <input
         type="number"
         class="priceField"
+        ref="input"
+        step="0.01"
         placeholder="R$ 0,00"
         v-model="preco"
       />
@@ -136,21 +139,33 @@ export default {
       this.listaPreco.push(this.preco);
       this.corAtivaIcon.yellow = true;
       this.corAtivaIcon.green = true;
+      this.$refs.input.value = "";
+      this.quantidade = "";
+      this.preco = "";
 
       this.calcQuantTotal();
       this.loopCalc();
       setTimeout(this.resetandoCores, 350);
     },
     calcQuantTotal() {
-      this.quantidadeTotal = this.listaQuantidade.reduce(
-        (quantidadeTotal, currentElement) => quantidadeTotal + currentElement
-      );
+      if (this.listaQuantidade != "") {
+        this.quantidadeTotal = this.listaQuantidade.reduce(
+          (quantidadeTotal, currentElement) => quantidadeTotal + currentElement
+        );
+      } else {
+        this.quantidadeTotal = 0;
+      }
     },
     calcPMTotal() {
-      this.precoMedioTotal =
-        this.result.reduce(
-          (precoMedioTotal, currentElement) => precoMedioTotal + currentElement
-        ) / this.quantidadeTotal;
+      if (this.listaQuantidade != "") {
+        this.precoMedioTotal =
+          this.result.reduce(
+            (precoMedioTotal, currentElement) =>
+              precoMedioTotal + currentElement
+          ) / this.quantidadeTotal;
+      } else {
+        this.precoMedioTotal = 0;
+      }
     },
     loopCalc() {
       for (let i = 0; i < this.listaQuantidade.length; i++) {
@@ -160,11 +175,18 @@ export default {
       this.calcPMTotal();
     },
     deleteSelectPM(index) {
-      this.result.splice(index - 1, 1);
-      this.listaQuantidade.splice(index - 1, 1);
-      this.listaPreco.splice(index - 1, 1);
-      this.corAtivaIcon.orange = true;
-
+      if (index > 1) {
+        this.result.splice(index - 1, 1);
+        this.listaQuantidade.splice(index - 1, 1);
+        this.listaPreco.splice(index - 1, 1);
+        this.corAtivaIcon.orange = true;
+      } else {
+        this.listaQuantidade.splice(index - 1, 1);
+        this.listaPreco.splice(index - 1, 1);
+        this.precoMedioTotal = 0;
+        this.quantidadeTotal = 0;
+        this.corAtivaIcon.orange = true;
+      }
       this.calcQuantTotal();
       this.calcPMTotal();
       setTimeout(this.resetandoCores, 350);
@@ -186,7 +208,7 @@ main {
 
 #title {
   color: var(--color-black2);
-  font-size: 30px;
+  font-size: 45px;
   text-align: center;
   margin-top: 100px;
 }
@@ -269,7 +291,7 @@ main {
 }
 
 #result {
-  min-width: 300px;
+  min-width: auto;
   height: 100px;
   display: flex;
   flex-direction: column;
