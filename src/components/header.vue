@@ -119,6 +119,17 @@ ul li a {
   color: var(--color-white1);
 }
 
+a:-webkit-any-link {
+    color: var(--color-white1);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a:hover{
+    transition: 0.5s;
+    color: var(--color-yellow1);
+}
+
 @media screen and (min-width: 700px) {
   #menu-button,
   #menu-logo,

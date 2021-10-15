@@ -2,6 +2,7 @@
   <div id="app">
     <Header />
     <PrecoMedio />
+    <Footer />
   </div>
 </template>
 
@@ -9,13 +10,14 @@
 import "./styles/global.css";
 import Header from "./components/header.vue";
 import PrecoMedio from "./pages/PrecoMedio.vue";
-
+import Footer from './components/footer.vue'
 
 export default {
   name: 'App',
   components: {
     Header,
-    PrecoMedio
+    PrecoMedio,
+    Footer
   }
 }
 </script>
