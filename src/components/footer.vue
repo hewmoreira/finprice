@@ -2,7 +2,7 @@
   <footer>
       <div id="end">
           <div>
-          FinPrice
+          Finprice
           </div>
           
           <div class="links">
