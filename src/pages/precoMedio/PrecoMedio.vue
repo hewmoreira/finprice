@@ -1,4 +1,6 @@
 <template>
+<div id="estruturaPagePrecoMedio">
+
   <main>
     <div id="title">Calculadora de Preço Médio</div>
     <div id="calculadoraPrecoMedio">
@@ -102,8 +104,9 @@
       </div>
     </div>
     <div id="publish"></div>
-    <DescricaoPrecoMedio />
   </main>
+    <DescricaoPrecoMedio />
+</div>
 </template>
 
 <script>
@@ -207,8 +210,15 @@ export default {
 </script>
 
 <style scoped>
-main {
+
+#estruturaPagePrecoMedio{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: var(--color-background-home);
+}
+
+main {
   align-items: center;
 }
 
