@@ -1,12 +1,32 @@
 <template>
   <header>
-    <nav id="nav">
+    <nav id="navDiv">
       <div class="logo">
         <router-link to="/">FinCalc</router-link>
       </div>
       <div class="menu">
-        <router-link to="/">Home</router-link>
-        <router-link to="/about">About</router-link>
+        <ul class="nav nav-pills">
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              data-bs-toggle="dropdown"
+              href="#"
+              role="button"
+              aria-expanded="false"
+              >Calculadora&nbsp;</a
+            >
+            <ul class="dropdown-menu">
+              <li>
+                <router-link class="dropdown-item" to="/"
+                  >Preço Médio</router-link
+                >
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="about">Sobre</router-link>
+          </li>
+        </ul>
       </div>
     </nav>
   </header>
@@ -14,7 +34,7 @@
 
 <script>
 export default {
-  name: "Header"
+  name: "Header",
 };
 </script>
 
@@ -28,8 +48,7 @@ header {
   align-items: center;
 }
 
-#nav {
-  /* background-color: chocolate; */
+#navDiv {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -38,7 +57,6 @@ header {
 }
 
 .logo {
-  /* background-color: cornsilk; */
   width: auto;
   height: 60px;
   display: flex;
@@ -46,7 +64,6 @@ header {
 }
 
 .menu {
-  /* background-color: darkgoldenrod; */
   min-width: 100px;
   height: 60px;
   display: flex;
@@ -54,15 +71,28 @@ header {
   justify-content: space-between;
 }
 
+.dropdown-menu {
+  background-color: var(--color-black1);
+}
+
+.dropdown-item:hover {
+  color: var(--color-yellow1);
+  background-color: var(--color-black1);
+}
+
+.nav-link:focus,
+.nav-link:hover {
+  color: var(--color-yellow1);
+}
+
 a:-webkit-any-link {
-    color: var(--color-white1);
-    cursor: pointer;
-    text-decoration: none;
+  color: var(--color-white1);
+  cursor: pointer;
+  text-decoration: none;
 }
 
-a:hover{
-    transition: 0.5s;
-    color: var(--color-yellow1);
+a:hover {
+  transition: 0.5s;
+  color: var(--color-yellow1);
 }
-
 </style>
