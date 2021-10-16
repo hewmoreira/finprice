@@ -3,7 +3,7 @@
     <div id="conteudo">
       <h1>Sobre</h1>
       <p>
-        O FinCalc é uma webpage com o intuito de auxiliar investidores pessoa
+        O FinPrice é uma webpage com o intuito de auxiliar investidores pessoa
         física a resolverem problemas de maneira descomplicada, com o uso de
         ferramentas simples e conteúdos que auxiliem na tomada de decisão e
         acompanhamento do mercado financeiro.<br><br><br>

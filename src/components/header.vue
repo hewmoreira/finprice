@@ -2,7 +2,7 @@
   <header>
     <nav id="navDiv">
       <div class="logo">
-        <router-link to="/">FinCalc</router-link>
+        <router-link to="/">FinPrice</router-link>
       </div>
       <div class="menu">
         <ul class="nav nav-pills">
