@@ -388,6 +388,5 @@ main {
   margin-top: 30px;
   width: 600px;
   height: 100px;
-  background: #fff;
 }
 </style>
