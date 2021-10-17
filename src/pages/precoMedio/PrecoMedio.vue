@@ -1,121 +1,120 @@
 <template>
-<div id="estruturaPagePrecoMedio">
-
-  <main>
-    <div id="title">Calculadora de Preço Médio</div>
-    <div id="calculadoraPrecoMedio">
-      <input
-        type="number"
-        class="quantField"
-        ref="input"
-        placeholder="Quantidade"
-        v-model="quantidade"
-      />
-      <input
-        type="number"
-        class="priceField"
-        ref="input"
-        step="0.01"
-        placeholder="R$ 0,00"
-        v-model="preco"
-      />
-      <button
-        type="submit"
-        class="btnCalc"
-        @click="calcPM"
-        :disabled="!quantidade || !preco"
-      >
-        <font-awesome-icon class="iconBtnCalc" icon="plus" />
-      </button>
-    </div>
-    <div id="result">
-      <div id="divQtdTotal">
-        Quantidade Total: &nbsp;
-        <font-awesome-icon
-          icon="coins"
-          id="iconResult"
-          :class="
-            corAtivaIcon.orange
-              ? 'orangeColor'
-              : corAtivaIcon.yellow
-              ? 'yellowColor'
-              : ''
-          "
-        />&nbsp;
-        <b
-          id="iconResult"
-          :class="
-            corAtivaIcon.orange
-              ? 'orangeColor'
-              : corAtivaIcon.yellow
-              ? 'yellowColor'
-              : ''
-          "
+  <div id="estruturaPagePrecoMedio">
+    <main>
+      <div id="title">Calculadora de Preço Médio</div>
+      <div id="calculadoraPrecoMedio">
+        <input
+          type="number"
+          class="quantField"
+          ref="input"
+          placeholder="Quantidade"
+          v-model="quantidade"
+        />
+        <input
+          type="number"
+          class="priceField"
+          ref="input"
+          step="0.01"
+          placeholder="R$ 0,00"
+          v-model="preco"
+        />
+        <button
+          type="submit"
+          class="btnCalc"
+          @click="calcPM"
+          :disabled="!quantidade || !preco"
         >
-          {{ formatNumber(quantidadeTotal) }}
-        </b>
+          <font-awesome-icon class="iconBtnCalc" icon="plus" />
+        </button>
       </div>
-      <div id="divPMTotal">
-        Preço Médio: &nbsp;
-        <font-awesome-icon
-          icon="dollar-sign"
-          id="iconResult"
-          :class="
-            corAtivaIcon.orange
-              ? 'orangeColor'
-              : corAtivaIcon.green
-              ? 'greenColor'
-              : ''
-          "
-        />&nbsp;
-        <b
-          id="iconResult"
-          :class="
-            corAtivaIcon.orange
-              ? 'orangeColor'
-              : corAtivaIcon.green
-              ? 'greenColor'
-              : ''
-          "
-        >
-          {{ formatPrice(precoMedioTotal) }}
-        </b>
-      </div>
-    </div>
-    <div id="divListaPM" v-if="listaQuantidade[0] || listaPreco[0]">
-      <div id="listaPMs" v-for="index in listaQuantidade.length" :key="index">
-        <div>
-          <button
-            type="submit"
-            class="btnDelete"
-            @click="deleteSelectPM(index)"
+      <div id="result">
+        <div id="divQtdTotal">
+          Quantidade Total: &nbsp;
+          <font-awesome-icon
+            icon="coins"
+            id="iconResult"
+            :class="
+              corAtivaIcon.orange
+                ? 'orangeColor'
+                : corAtivaIcon.yellow
+                ? 'yellowColor'
+                : ''
+            "
+          />&nbsp;
+          <b
+            id="iconResult"
+            :class="
+              corAtivaIcon.orange
+                ? 'orangeColor'
+                : corAtivaIcon.yellow
+                ? 'yellowColor'
+                : ''
+            "
           >
-            <font-awesome-icon class="iconBtnDelete" icon="minus" />
-          </button>
+            {{ formatNumber(quantidadeTotal) }}
+          </b>
         </div>
-        <div>
-          <font-awesome-icon icon="coins" />&nbsp;
-          <b>{{ formatNumber(listaQuantidade[index - 1]) }}</b>
-        </div>
-        <div>
-          <font-awesome-icon icon="dollar-sign" />&nbsp;
-          <b>{{ formatPrice(listaPreco[index - 1]) }}</b>
+        <div id="divPMTotal">
+          Preço Médio: &nbsp;
+          <font-awesome-icon
+            icon="dollar-sign"
+            id="iconResult"
+            :class="
+              corAtivaIcon.orange
+                ? 'orangeColor'
+                : corAtivaIcon.green
+                ? 'greenColor'
+                : ''
+            "
+          />&nbsp;
+          <b
+            id="iconResult"
+            :class="
+              corAtivaIcon.orange
+                ? 'orangeColor'
+                : corAtivaIcon.green
+                ? 'greenColor'
+                : ''
+            "
+          >
+            {{ formatPrice(precoMedioTotal) }}
+          </b>
         </div>
       </div>
-    </div>
-    <div id="publish"></div>
-  </main>
+      <div id="divListaPM" v-if="listaQuantidade[0] || listaPreco[0]">
+        <div id="listaPMs" v-for="index in listaQuantidade.length" :key="index">
+          <div>
+            <button
+              type="submit"
+              class="btnDelete"
+              @click="deleteSelectPM(index)"
+            >
+              <font-awesome-icon class="iconBtnDelete" icon="minus" />
+            </button>
+          </div>
+          <div>
+            <font-awesome-icon icon="coins" />&nbsp;
+            <b>{{ formatNumber(listaQuantidade[index - 1]) }}</b>
+          </div>
+          <div>
+            <font-awesome-icon icon="dollar-sign" />&nbsp;
+            <b>{{ formatPrice(listaPreco[index - 1]) }}</b>
+          </div>
+        </div>
+      </div>
+      <div id="publish"></div>
+    </main>
     <DescricaoPrecoMedio />
-</div>
+  </div>
 </template>
 
 <script>
-import DescricaoPrecoMedio from './pages/descricao.vue'
+import DescricaoPrecoMedio from "./pages/descricao.vue";
 
 export default {
   name: "PrecoMedio",
   components: {
-    DescricaoPrecoMedio
+    DescricaoPrecoMedio,
   },
   data() {
     return {
@@ -210,8 +209,7 @@ export default {
 </script>
 
 <style scoped>
-
-#estruturaPagePrecoMedio{
+#estruturaPagePrecoMedio {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -391,57 +389,56 @@ main {
 
 @media (max-width: 800px) {
   #title {
-  font-size: 27px;
-  margin-top: 50px;
-}
+    font-size: 27px;
+    margin-top: 50px;
+  }
 
   #calculadoraPrecoMedio {
-  margin-top: 10px;
-  width: auto;
-  height: auto;
-}
+    margin-top: 10px;
+    width: auto;
+    height: auto;
+  }
 
-.quantField {
-  font-size: 17px;
-  width: 120px;
-  padding: 10px;
-  margin: 0 8px;
-}
+  .quantField {
+    font-size: 17px;
+    width: 120px;
+    padding: 10px;
+    margin: 0 8px;
+  }
 
-.quantField:hover {
-  width: 120px;
-}
+  .quantField:hover {
+    width: 120px;
+  }
 
-.quantField:focus {
-  width: 120px;
-}
+  .quantField:focus {
+    width: 120px;
+  }
 
-.priceField {
-  font-size: 17px;
-  width: 120px;
-  padding: 10px;
-  margin: 0 8px;
-}
+  .priceField {
+    font-size: 17px;
+    width: 120px;
+    padding: 10px;
+    margin: 0 8px;
+  }
 
-.priceField:hover {
-  width: 120px;
-}
+  .priceField:hover {
+    width: 120px;
+  }
 
-.priceField:focus {
-  width: 120px;
-}
+  .priceField:focus {
+    width: 120px;
+  }
 
-.btnCalc {
-  margin-left: 10px;
-}
+  .btnCalc {
+    margin-left: 10px;
+  }
 
-#result {
-  margin-top: 20px;
-}
+  #result {
+    margin-top: 20px;
+  }
 
-#publish {
-  width: 330px;
+  #publish {
+    width: 330px;
+  }
 }
-}
-
 </style>

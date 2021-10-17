@@ -90,4 +90,24 @@ h3 {
   margin-top: 15px;
   margin-bottom: 15px;
 }
+
+@media (max-width: 800px) {
+  .textoInformativo {
+    margin-top: 15px;
+    width: auto;
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 25px;
+    margin-bottom: 15px;
+  }
+
+  h3 {
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+}
 </style>
