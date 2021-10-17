@@ -66,7 +66,6 @@ export default {
 
 <style>
 #descricaoPrecoMedio {
-  margin-top: 350px;
   height: auto;
   width: 100%;
   background-color: #fdfbfb;
