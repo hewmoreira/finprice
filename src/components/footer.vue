@@ -6,6 +6,7 @@
         <img id="logo-rodape" :src="logo.yellowwhite" alt="Finprice" />
       </router-link>
       </div>
+
       <div class="links">
         <router-link to="Policy"> Política de Privacidade </router-link>
       </div>
@@ -87,7 +88,6 @@ footer {
 
 .links {
   text-decoration: none;
-  /* color: white; */
 }
 
 a:-webkit-any-link {
@@ -100,4 +100,25 @@ a:hover {
   transition: 0.5s;
   color: var(--color-yellow1);
 }
+
+@media (max-width: 800px) {
+
+#end {
+  font-size: 10px;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+#logo-rodape{
+  width: 60px;
+  transition: 2s;
+  display: flex;
+}
+
+.contato {
+  font-size: 16px;
+  width: 85px;
+}
+}
+
 </style>
