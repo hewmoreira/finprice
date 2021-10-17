@@ -96,6 +96,7 @@ h3 {
     margin-top: 15px;
     width: auto;
     padding: 10px;
+    margin-bottom: 0px;
   }
 
   h1 {

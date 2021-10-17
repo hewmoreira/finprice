@@ -111,8 +111,6 @@ a:hover {
 
 #logo-rodape{
   width: 60px;
-  transition: 2s;
-  display: flex;
 }
 
 .contato {
