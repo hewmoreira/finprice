@@ -43,6 +43,7 @@ export default {
         hover: false,
         white: require('@/assets/logo-white.png'),
         yellow: require('@/assets/logo-yellow.png'),
+        yellowwhite: require('@/assets/logo-yellow-and-white.png'),
       }
     }
   }
