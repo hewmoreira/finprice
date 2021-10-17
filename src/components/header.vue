@@ -3,7 +3,7 @@
     <nav id="navDiv">
       <div class="logo-div">
         <router-link to="/">
-          <img id="logo-white" :src="logo.white" alt="Finprice">
+          <img id="logo-white" :src="logo.yellowwhite" alt="Finprice">
         </router-link>
       </div>
       <div class="menu">
