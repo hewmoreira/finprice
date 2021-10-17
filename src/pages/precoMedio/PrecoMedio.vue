@@ -388,4 +388,60 @@ main {
   width: 600px;
   height: 100px;
 }
+
+@media (max-width: 800px) {
+  #title {
+  font-size: 27px;
+  margin-top: 50px;
+}
+
+  #calculadoraPrecoMedio {
+  margin-top: 10px;
+  width: auto;
+  height: auto;
+}
+
+.quantField {
+  font-size: 17px;
+  width: 120px;
+  padding: 10px;
+  margin: 0 8px;
+}
+
+.quantField:hover {
+  width: 120px;
+}
+
+.quantField:focus {
+  width: 120px;
+}
+
+.priceField {
+  font-size: 17px;
+  width: 120px;
+  padding: 10px;
+  margin: 0 8px;
+}
+
+.priceField:hover {
+  width: 120px;
+}
+
+.priceField:focus {
+  width: 120px;
+}
+
+.btnCalc {
+  margin-left: 10px;
+}
+
+#result {
+  margin-top: 20px;
+}
+
+#publish {
+  width: 330px;
+}
+}
+
 </style>
