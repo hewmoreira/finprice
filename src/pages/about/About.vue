@@ -54,7 +54,7 @@ h6 {
   #conteudoAbout {
     margin-top: 30px;
     width: auto;
-    padding: 10px;
+    padding: 15px;
   }
 
   h1 {
