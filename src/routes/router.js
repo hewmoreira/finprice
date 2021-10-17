@@ -1,6 +1,7 @@
 import { createWebHistory, createRouter } from 'vue-router';
 import PrecoMedio from '../pages/precoMedio/PrecoMedio.vue';
 import About from '../pages/about/About'
+import Policy from '../pages/politicaDePrivacidade/politicaDePrivacidade.vue'
 
 const routes = [
 	{
@@ -12,6 +13,11 @@ const routes = [
 		path: '/about',
 		name: 'About',
 		component: About,
+	},
+	{
+		path: '/policy',
+		name: 'Policy',
+		component: Policy,
 	},
 ];
 
