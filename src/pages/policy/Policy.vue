@@ -227,4 +227,17 @@ a:hover {
   transition: 0.5s;
   color: var(--color-yellow1);
 }
+
+@media (max-width: 800px) {
+
+#textPolicy {
+  margin-top: 30px;
+  width: auto;
+  padding: 15px;
+}
+
+h1 {
+  font-size: 25px;
+}
+}
 </style>

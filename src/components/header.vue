@@ -3,7 +3,7 @@
     <nav id="navDiv">
       <div class="logo-div">
         <router-link to="/">
-          <img id="logo-white" :src="logo.yellowwhite" alt="Finprice">
+          <img id="logo-white" :src="logo.yellowwhite" alt="Finprice" />
         </router-link>
       </div>
       <div class="menu">
@@ -41,16 +41,16 @@ export default {
     return {
       logo: {
         hover: false,
-        white: require('@/assets/logo-white.png'),
-        yellow: require('@/assets/logo-yellow.png'),
-        yellowwhite: require('@/assets/logo-yellow-and-white.png'),
-      }
-    }
-  }
+        white: require("@/assets/logo-white.png"),
+        yellow: require("@/assets/logo-yellow.png"),
+        yellowwhite: require("@/assets/logo-yellow-and-white.png"),
+      },
+    };
+  },
 };
 </script>
 
-<style>
+<style scoped>
 header {
   background-color: var(--color-black1);
   height: 60px;
@@ -75,10 +75,8 @@ header {
   align-items: center;
 }
 
-#logo-white{
+#logo-white {
   width: 115px;
-  transition: 2s;
-  display: flex;
 }
 
 .menu {
@@ -112,5 +110,19 @@ a:-webkit-any-link {
 a:hover {
   transition: 0.5s;
   color: var(--color-yellow1);
+}
+
+@media (max-width: 800px) {
+  #navDiv {
+    width: 95%;
+  }
+
+  #logo-white {
+    width: 100px;
+  }
+
+  .menu {
+    min-width: auto;
+  }
 }
 </style>
