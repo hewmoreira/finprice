@@ -1,6 +1,6 @@
 <template>
   <div id="about">
-    <div id="conteudo">
+    <div id="conteudoAbout">
       <h1>Sobre</h1>
       <p>
         O Finprice é uma webpage com o intuito de auxiliar investidores pessoa
@@ -33,7 +33,7 @@ export default {
   height: calc(100vh - 120px);
 }
 
-#conteudo {
+#conteudoAbout {
     margin-top: 100px;
     width: 450px;
 }

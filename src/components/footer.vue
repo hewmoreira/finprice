@@ -20,7 +20,7 @@
         <a href="https://twitter.com/hewmoreira" target="_blank">
           <font-awesome-icon :icon="['fab', 'twitter']" />
         </a>
-        <a href="mailto:hewertonfm@gmail.com">
+        <a href="mailto:hewerton@finprice.com.br">
           <font-awesome-icon icon="envelope" />
         </a>
       </div>
