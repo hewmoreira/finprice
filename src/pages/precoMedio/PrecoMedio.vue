@@ -348,7 +348,6 @@ main {
   margin-top: 30px;
   min-width: 300px;
   min-height: 10px;
-  /* display: inline-block; */
   padding: 10px;
   border: 2px dashed var(--color-white1);
 }
@@ -363,8 +362,8 @@ main {
 }
 
 .btnDelete {
-  width: 20px;
-  height: 18px;
+  width: 21px;
+  height: 21px;
   border: none;
   border-radius: 5px;
   color: var(--color-white1);

@@ -1,8 +1,10 @@
 <template>
   <header>
     <nav id="navDiv">
-      <div class="logo">
-        <router-link to="/">Finprice</router-link>
+      <div class="logo-div">
+        <router-link to="/">
+          <img id="logo-white" :src="logo.white" alt="Finprice">
+        </router-link>
       </div>
       <div class="menu">
         <ul class="nav nav-pills">
@@ -35,6 +37,15 @@
 <script>
 export default {
   name: "Header",
+  data() {
+    return {
+      logo: {
+        hover: false,
+        white: require('@/assets/logo-white.png'),
+        yellow: require('@/assets/logo-yellow.png'),
+      }
+    }
+  }
 };
 </script>
 
@@ -56,11 +67,17 @@ header {
   height: 60px;
 }
 
-.logo {
+.logo-div {
   width: auto;
   height: 60px;
   display: flex;
   align-items: center;
+}
+
+#logo-white{
+  width: 115px;
+  transition: 2s;
+  display: flex;
 }
 
 .menu {
