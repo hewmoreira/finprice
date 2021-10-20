@@ -3,7 +3,7 @@ import Home from '../pages/home/home.vue'
 import PrecoMedio from '../pages/precoMedio/PrecoMedio.vue';
 import About from '../pages/about/About'
 import Policy from '../pages/policy/Policy.vue'
-import Post1 from '../posts/about-CEI.vue'
+import About_CEI from '../posts/about_CEI.vue'
 
 const routes = [
 	{
@@ -29,7 +29,7 @@ const routes = [
 	{
 		path: '/o-que-e-cei',
 		name: 'o-que-e-cei',
-		component: Post1,
+		component: About_CEI,
 	},
 ];
 

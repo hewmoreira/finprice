@@ -6,7 +6,7 @@
 
 <script>
 export default {
-    name: "Post1"
+    name: "About_CEI"
 }
 </script>
 
