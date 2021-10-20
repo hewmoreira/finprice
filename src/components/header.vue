@@ -19,7 +19,7 @@
             >
             <ul class="dropdown-menu">
               <li>
-                <router-link class="dropdown-item" to="/"
+                <router-link class="dropdown-item" to="/calculadora-preco-medio"
                   >Preço Médio</router-link
                 >
               </li>

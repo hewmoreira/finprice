@@ -26,6 +26,7 @@ body{
 a{
     text-decoration: none;
     transition: 0.2s;
+    color: var(--color-white1);
 }
 
 a:-webkit-any-link {
