@@ -60,15 +60,14 @@
 
 <script>
 export default {
-    name: "About_CEI"
-}
+  name: "About_CEI",
+};
 </script>
 
 <style scoped>
 #post {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
   background-color: var(--color-background-home);
   min-height: calc(100vh - 120px);
@@ -87,10 +86,11 @@ h1 {
 
 h2 {
   font-size: 25px;
-  color: var(--color-black2)
+  color: var(--color-black2);
 }
 
-p, ul {
+p,
+ul {
   text-align: justify;
   color: var(--color-black2);
 }
@@ -107,20 +107,18 @@ a:hover {
 }
 
 @media (max-width: 800px) {
+  #textPolicy {
+    margin-top: 30px;
+    width: auto;
+    padding: 15px;
+  }
 
-#textPolicy {
-  margin-top: 30px;
-  width: auto;
-  padding: 15px;
-}
+  h1 {
+    font-size: 25px;
+  }
 
-h1 {
-  font-size: 25px;
-}
-
-h2 {
-  font-size: 18px;
-}
-
+  h2 {
+    font-size: 18px;
+  }
 }
 </style>
