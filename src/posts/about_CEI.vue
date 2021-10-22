@@ -54,13 +54,20 @@
         Vale lembrar que, por questões de segurança da própria B3, há a exigência da troca de senha a cada seis meses. Portanto, fique de olho nisso para não levar um susto ao tentar a entrada no sistema. No caso de não lembrar a sua credencial, o procedimento também é muito simples. Basta clicar em “esqueci minha senha”, preencher as informações solicitadas e ficar de olho no e-mail para pegar a nova credencial. <br><br>
         Em resumo, perceba que o CEI não é um bicho de sete cabeças. Trata-se de um facilitador em termos de organização, de modo que você pode ter a tranquilidade de saber que os seus títulos e ativos comprados estão muito bem guardados. <br><br>
       </p>
+
+      <SeeMore />
     </div>
   </div>
 </template>
 
 <script>
+import SeeMore from "./seeMore.vue";
+
 export default {
   name: "About_CEI",
+  components: {
+    SeeMore,
+  },
 };
 </script>
 

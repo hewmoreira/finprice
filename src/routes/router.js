@@ -9,6 +9,7 @@ import Policy from '../pages/policy/Policy.vue'
 // Import from Posts
 import About_CEI from '../posts/about_CEI.vue'
 import About_Benchmark from '../posts/about_Benchmark.vue'
+import About_ETF from '../posts/about_ETF.vue'
 
 const routes = [
 	{
@@ -40,6 +41,11 @@ const routes = [
 		path: '/benchmark-saiba-quais-sao-os-indices-de-referencias',
 		name: 'benchmark-saiba-quais-sao-os-indices-de-referencias',
 		component: About_Benchmark,
+	},
+	{
+		path: '/o-que-sao-etfs',
+		name: 'o-que-sao-etfs',
+		component: About_ETF,
 	},
 ];
 

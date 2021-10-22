@@ -48,16 +48,22 @@
           <p>
               Depois de conhecer os principais benchmarks do mercado, tanto de renda fixa como variável, é interessante saber a relação desses índices com os ETFs (exchange traded funds). Eles são fundos negociados na bolsa de valores, chamados também de fundo de índice. <br><br>
               O nome se deve ao fato de que eles estão atrelados a um benchmark. O objetivo do ETF é exatamente replicar a carteira teórica de um índice do mercado. Assim, são uma forma de fazer investimento indiretamente em determinado indicador. <br><br>
-              Os ETFs podem estar atrelados a benchmarks nacionais — como o IBOV — ou internacionais, como o S&P 500 (que representa ações dos Estados Unidos). Ao investir neles, é possível se expor a uma carteira diversificada de maneira passiva. <br>br
+              Os ETFs podem estar atrelados a benchmarks nacionais — como o IBOV — ou internacionais, como o S&P 500 (que representa ações dos Estados Unidos). Ao investir neles, é possível se expor a uma carteira diversificada de maneira passiva. <br><br>
                 Como você viu, o benchmark é um índice de referência importante para o investidor avaliar as alternativas do mercado. Ele pode ser utilizado para analisar fundos e ativos, considerando o melhor indicador de acordo com cada alternativa da sua carteira e com seus objetivos.
           </p>
+
+          <SeeMore />
       </div>
   </div>
 </template>
 
 <script>
+import SeeMore from './seeMore.vue'
 export default {
   name: "About_Benchmark",
+  components: {
+    SeeMore
+  }
 };
 </script>
 
