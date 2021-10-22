@@ -8,7 +8,7 @@
       </div>
 
       <div class="links">
-        <a href="Policy" target="_top"> Política de Privacidade </a>
+        <router-link to="/policy" target="_top"> Política de Privacidade </router-link>
       </div>
 
       <div class="contato">

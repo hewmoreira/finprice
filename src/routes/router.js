@@ -33,17 +33,17 @@ const routes = [
 		component: Policy,
 	},
 	{
-		path: '/o-que-e-cei',
+		path: '/posts/o-que-e-cei',
 		name: 'o-que-e-cei',
 		component: About_CEI,
 	},
 	{
-		path: '/benchmark-saiba-quais-sao-os-indices-de-referencias',
+		path: '/posts/benchmark-saiba-quais-sao-os-indices-de-referencias',
 		name: 'benchmark-saiba-quais-sao-os-indices-de-referencias',
 		component: About_Benchmark,
 	},
 	{
-		path: '/o-que-sao-etfs',
+		path: '/posts/o-que-sao-etfs',
 		name: 'o-que-sao-etfs',
 		component: About_ETF,
 	},

@@ -2,13 +2,13 @@
   <div id="seeMore">
     <h2>Veja mais posts em:</h2>
     <p>
-      <a href="/o-que-e-cei" target="_top">O que é CEI?</a><br />
-      <a
-        href="/benchmark-saiba-quais-sao-os-indices-de-referencias"
+      <router-link to="/posts/o-que-e-cei" target="_top">O que é CEI?</router-link><br />
+      <router-link
+        to="/posts/benchmark-saiba-quais-sao-os-indices-de-referencias"
         target="_top"
-        >Benchmark: Saiba quais são os índices de referências</a
+        >Benchmark: Saiba quais são os índices de referências</router-link
       ><br />
-      <a href="/o-que-sao-etfs" target="_top">O que são ETFs?</a><br />
+      <router-link to="/posts/o-que-sao-etfs" target="_top">O que são ETFs?</router-link><br />
     </p>
   </div>
 </template>
