@@ -1,7 +1,9 @@
 <template>
   <div id="cookie" v-if="isOpen">
     <div class="cookieMessage">
-      {{ cookieMessage }}
+      Usamos cookies e tecnologias semelhantes de acordo com a nossa
+      <a href="/policy"><b>Política de Privacidade</b></a>. Ao continuar navegando,
+      você concorda com essas condições.
     </div>
     <button class="btn btn-primary" @click="acceptGDPR">
       {{ cookieButtonTextAgree }}
@@ -99,14 +101,29 @@ export default {
   background-color: var(--color-yellow1);
 }
 
-@media (max-width: 800px) {
-    #cookie {
-  width: auto;
-  height: auto;
-  padding: 2px;
-  margin-left: 5%;
-  margin-right: 5%;
-  font-size: 10px;
+a {
+  color: var(--color-yellow1);
 }
+
+a:-webkit-any-link {
+  color: var(--color-yellow1);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a:hover {
+  transition: 0.5s;
+  color: var(--color-orange1);
+}
+
+@media (max-width: 800px) {
+  #cookie {
+    width: auto;
+    height: auto;
+    padding: 2px;
+    margin-left: 5%;
+    margin-right: 5%;
+    font-size: 10px;
+  }
 }
 </style>

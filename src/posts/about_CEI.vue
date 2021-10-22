@@ -103,14 +103,14 @@ ul {
 }
 
 a:-webkit-any-link {
-  color: var(--color-orange1);
+  color: var(--color-yellow1);
   cursor: pointer;
   text-decoration: none;
 }
 
 a:hover {
   transition: 0.5s;
-  color: var(--color-yellow1);
+  color: var(--color-orange1);
 }
 
 @media (max-width: 800px) {
