@@ -53,14 +53,21 @@
         <br />
         Obrigado por visitar nossa página, esperamos ter contribuído com seu
         conhecimento.
-      </p>
+      </p><br><br>
+
+      <SeeMore />
     </div>
   </div>
 </template>
 
 <script>
+import SeeMore from '../../../posts/seeMore.vue'
+
 export default {
   name: "DescricaoPrecoMedio",
+  components: {
+    SeeMore,
+  }
 };
 </script>
 

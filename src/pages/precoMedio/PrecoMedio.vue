@@ -87,7 +87,7 @@
             <button
               type="submit"
               class="btnDelete"
-              @click="deleteSelectPM(index)"
+              @click="deleteSelectPM(index - 1)"
             >
               <font-awesome-icon class="iconBtnDelete" icon="minus" />
             </button>
@@ -161,7 +161,7 @@ export default {
           (quantidadeTotal, currentElement) => quantidadeTotal + currentElement
         );
       } else {
-        this.quantidadeTotal = 0;
+        this.zerarVariaveis()
       }
     },
     calcPMTotal() {
@@ -172,27 +172,27 @@ export default {
               precoMedioTotal + currentElement
           ) / this.quantidadeTotal;
       } else {
-        this.precoMedioTotal = 0;
+        this.zerarVariaveis()
       }
     },
     loopCalc() {
       for (let i = 0; i < this.listaQuantidade.length; i++) {
         this.multi = this.listaQuantidade[i] * this.listaPreco[i];
       }
+      this.precoMedioTotal = 0;
       this.result.push(this.multi);
       this.calcPMTotal();
     },
     deleteSelectPM(index) {
-      if (index > 1) {
-        this.result.splice(index - 1, 1);
-        this.listaQuantidade.splice(index - 1, 1);
-        this.listaPreco.splice(index - 1, 1);
+      if (index > 0 && this.listaQuantidade.length > 0) {
+        this.result.splice(index, 1);
+        this.listaQuantidade.splice(index, 1);
+        this.listaPreco.splice(index, 1);
         this.corAtivaIcon.orange = true;
       } else {
-        this.listaQuantidade.splice(index - 1, 1);
-        this.listaPreco.splice(index - 1, 1);
-        this.precoMedioTotal = 0;
-        this.quantidadeTotal = 0;
+        this.listaQuantidade.splice(index, 1);
+        this.listaPreco.splice(index, 1);
+        this.result.splice(index, 1);
         this.corAtivaIcon.orange = true;
       }
       this.calcQuantTotal();
@@ -204,6 +204,16 @@ export default {
       this.corAtivaIcon.orange = false;
       this.corAtivaIcon.green = false;
     },
+    zerarVariaveis(){
+      this.quantidade = "",
+      this.listaQuantidade = [],
+      this.preco = "",
+      this.listaPreco = [],
+      this.quantidadeTotal = "",
+      this.precoMedioTotal = 0,
+      this.multi = 0,
+      this.result = []     
+    }
   },
 };
 </script>
